@@ -25,8 +25,8 @@ First you need to create a salesforce instance:
 ```ruby
 salesforceintegration = SalesforceIntegration.new("client_id", "client_secret", "host", "username", "password")
 ```
-client_id and client_secret: See this [link](https://auth0.com/docs/connections/social/salesforce)
-host: Use login.salesforce.com or test.salesforce.com if using a sandbox
+* client_id and client_secret: See this [link](https://auth0.com/docs/connections/social/salesforce)
+* host: Use login.salesforce.com or test.salesforce.com if using a sandbox
 username and password: Use a salesforce developer edition account
 
 ##Creating a Lead
@@ -45,7 +45,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[karlamaria]/salesforceintegration. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/karlamaria/salesforceintegrationGem. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License
