@@ -33,6 +33,7 @@ module SalesforceIntegration
       lead['IsConverted'] = false
       lead['IsUnreadByOwner'] = true
       lead.save
+      lead.Id
     end
   end
 end

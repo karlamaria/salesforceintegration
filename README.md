@@ -36,6 +36,7 @@ After salesforceintegration initialized you only need pass the lead's data
 ```ruby
 salesforceintegration.create_lead_on_salesforce("first_name", "last_name", "email", "company", "job_title", "phone", "website")
 ```
+This method returns the lead's 
 
 ## Development
 
