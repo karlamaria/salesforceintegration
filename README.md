@@ -1,8 +1,6 @@
 # Salesforceintegration
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/salesforceintegration`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+salesforceintegration is a gem that permit to create Leads on the Salesforce
 
 ## Installation
 
@@ -22,7 +20,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+First you need to create a salesforce instance:
+
+```ruby
+salesforceintegration = SalesforceIntegration.new("client_id", "client_secret", "host", "username", "password")
+```
+client_id and client_secret: See this [link](https://auth0.com/docs/connections/social/salesforce)
+host: Use login.salesforce.com or test.salesforce.com if using a sandbox
+username and password: Use a salesforce developer edition account
+
+##Creating a Lead
+
+After salesforceintegration initialized you only need pass the lead's data
+
+```ruby
+salesforceintegration.create_lead_on_salesforce("first_name", "last_name", "email", "company", "job_title", "phone", "website")
+```
 
 ## Development
 
@@ -32,7 +45,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/salesforceintegration. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[karlamaria]/salesforceintegration. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License

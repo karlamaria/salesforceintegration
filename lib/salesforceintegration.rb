@@ -4,9 +4,8 @@ require 'active_support'
 require 'yaml'
 require 'databasedotcom'
 
-module Salesforceintegration
-  class SalesforceIntegration
-
+module SalesforceIntegration
+  class SalesforceIntegrationLead
     def initialize(salesforce_client_id, salesforce_client_secret, salesforce_url, salesforce_username, salesforce_password)
       client = Databasedotcom::Client.new(:client_id => salesforce_client_id, :client_secret => salesforce_client_secret, :host => salesforce_url)
       client.authenticate(:username => salesforce_username, :password => salesforce_password)
