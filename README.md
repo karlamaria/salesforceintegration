@@ -27,7 +27,7 @@ salesforceintegration = SalesforceIntegration.new("client_id", "client_secret", 
 ```
 * client_id and client_secret: See this [link](https://auth0.com/docs/connections/social/salesforce)
 * host: Use login.salesforce.com or test.salesforce.com if using a sandbox
-username and password: Use a salesforce developer edition account
+* username and password: Use a salesforce developer edition account
 
 ##Creating a Lead
 
