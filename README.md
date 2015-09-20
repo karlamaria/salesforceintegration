@@ -23,7 +23,7 @@ Or install it yourself as:
 First you need to create a salesforce instance:
 
 ```ruby
-salesforceintegration = SalesforceIntegration.new("client_id", "client_secret", "host", "username", "password")
+salesforceintegration = SalesforceIntegration::SalesforceIntegrationLead.new("client_id", "client_secret", "host", "username", "password")
 ```
 * client_id and client_secret: See this [link](https://auth0.com/docs/connections/social/salesforce)
 * host: Use login.salesforce.com or test.salesforce.com if using a sandbox
