@@ -15,6 +15,7 @@ module SalesforceIntegration
     end
 
     #TODO: Permitir associar a contas
+    #TODO: Validar campos
     def create_lead_on_salesforce(first_name, last_name, email, company, job_title, phone, website)
       lead = Lead.new
 
