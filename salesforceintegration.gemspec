@@ -25,5 +25,5 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "active_support"
   spec.add_runtime_dependency "yaml"
-  spec.add_runtime-dependency "databasedotcom"
+  spec.add_runtime_dependency "databasedotcom"
 end
