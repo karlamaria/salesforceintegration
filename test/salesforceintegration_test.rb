@@ -7,7 +7,7 @@ class SalesforceintegrationTest < Minitest::Test
     @salesforceintegration = SalesforceIntegration::SalesforceIntegrationLead.new(:client_id => "3MVG9KI2HHAq33RwYSXuaADxYczYSG11EU6HMpqqBCy9pG8qHhBbvncqDOZsweOo0poZEUbb6dZTxXwBrYd9t", :client_secret => "4730020655226818798", :url => "login.salesforce.com", :username => "desafio@desafio.com.br", :password => "1234qwer")
   end
 
-  teardown
+  def teardown
     @salesforceintegration = nil
   end
 
