@@ -19,6 +19,8 @@ module SalesforceIntegration
     def create_lead_on_salesforce(fields)
       raise "The fields last_name and company are required"    unless fields.has_key?(:last_name) and fields.has_key?(:company)
       raise "The fields last_name and company cannot be blank"     if fields[:last_name].blank?    or fields[:company].blank? 
+      raise "Email must be valid" unless fields[:email].blank? or 
+                                          fields[:email] =~ /^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/
 
       lead = Lead.new
       user = User.first
