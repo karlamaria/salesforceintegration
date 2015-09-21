@@ -18,13 +18,11 @@ class SalesforceintegrationTest < Minitest::Test
     assert_equal( "It's necessary to inform client_id, client_secret, url, username and password!", exception.message )
   end
 
-=begin
   def test_create_lead_with_all_fields
     salesforceintegration = SalesforceIntegration::SalesforceIntegrationLead.new(:client_id => "3MVG9KI2HHAq33RwYSXuaADxYczYSG11EU6HMpqqBCy9pG8qHhBbvncqDOZsweOo0poZEUbb6dZTxXwBrYd9t", :client_secret => "4730020655226818798", :url => "login.salesforce.com", :username => "desafio@desafio.com.br", :password => "1234qwer")
     id = salesforceintegration.create_lead_on_salesforce(:first_name => "Karla Maria", :last_name => "Garcia", :email => "karlamaria@gmail.com", :company => "Resultados Digitais", :job_title => "dddd", :phone => "9999", :password => "fgh")
     refute_nil(Lead.find_by_Id(id)) 
   end
-=end
 
   def test_create_lead_without_last_name_field
     salesforceintegration = SalesforceIntegration::SalesforceIntegrationLead.new(:client_id => "3MVG9KI2HHAq33RwYSXuaADxYczYSG11EU6HMpqqBCy9pG8qHhBbvncqDOZsweOo0poZEUbb6dZTxXwBrYd9t", :client_secret => "4730020655226818798", :url => "login.salesforce.com", :username => "desafio@desafio.com.br", :password => "1234qwer")
