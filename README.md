@@ -23,7 +23,7 @@ Or install it yourself as:
 First you need to create a salesforce instance:
 
 ```ruby
-salesforceintegration = SalesforceIntegration::SalesforceIntegrationLead.new("client_id", "client_secret", "host", "username", "password")
+salesforceintegration = SalesforceIntegration::SalesforceIntegrationLead.new(:client_id => "client_id", :client_secret => "client_secret", :url => "url", :username => "username", :password => "password")
 ```
 * client_id and client_secret: See this [link](https://auth0.com/docs/connections/social/salesforce)
 * host: Use login.salesforce.com or test.salesforce.com if using a sandbox
@@ -34,7 +34,7 @@ salesforceintegration = SalesforceIntegration::SalesforceIntegrationLead.new("cl
 After salesforceintegration initialized you only need pass the lead's data
 
 ```ruby
-salesforceintegration.create_lead_on_salesforce("first_name", "last_name", "email", "company", "job_title", "phone", "website")
+salesforceintegration.create_lead_on_salesforce(:first_name => "first_name", :last_name => "last_name", :email => "email", :company => "company", :job_title => "job_title", :phone => "phone", :password => "password")
 ```
 This method returns the lead's ID
 
