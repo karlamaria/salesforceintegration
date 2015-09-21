@@ -21,22 +21,22 @@ class SalesforceintegrationTest < Minitest::Test
   end
 
   def test_create_lead_with_all_fields
-    id = @salesforceintegration.create_lead_on_salesforce(:first_name => "Karla Maria", :last_name => "Garcia", :email => "karlamaria@gmail.com", :company => "Resultados Digitais", :job_title => "dddd", :phone => "9999", :password => "fgh")
+    id = @salesforceintegration.create_lead_on_salesforce("desafio@desafio.com.br", :first_name => "Karla Maria", :last_name => "Garcia", :email => "karlamaria@gmail.com", :company => "Resultados Digitais", :job_title => "dddd", :phone => "9999", :password => "fgh")
     refute_nil(Lead.find_by_Id(id)) 
   end
 
   def test_create_lead_without_last_name_field
-    exception = assert_raises(RuntimeError) { id = @salesforceintegration.create_lead_on_salesforce(:first_name => "Karla Maria", :email => "karlamaria@gmail.com", :company => "Resultados Digitais", :job_title => "dddd", :phone => "9999", :password => "fgh") }
+    exception = assert_raises(RuntimeError) { id = @salesforceintegration.create_lead_on_salesforce("desafio@desafio.com.br", :first_name => "Karla Maria", :email => "karlamaria@gmail.com", :company => "Resultados Digitais", :job_title => "dddd", :phone => "9999", :password => "fgh") }
     assert_equal( "The fields last_name and company are required", exception.message )
   end
 
   def test_create_lead_without_company_field
-    exception = assert_raises(RuntimeError) { id = @salesforceintegration.create_lead_on_salesforce(:first_name => "Karla Maria", :last_name => "Garcia", :email => "karlamaria@gmail.com", :job_title => "dddd", :phone => "9999", :password => "fgh") }
+    exception = assert_raises(RuntimeError) { id = @salesforceintegration.create_lead_on_salesforce("desafio@desafio.com.br", :first_name => "Karla Maria", :last_name => "Garcia", :email => "karlamaria@gmail.com", :job_title => "dddd", :phone => "9999", :password => "fgh") }
     assert_equal( "The fields last_name and company are required", exception.message )
   end
  
   def test_create_lead_with_blank_last_name_and_company_fields
-    exception = assert_raises(RuntimeError) { id = @salesforceintegration.create_lead_on_salesforce(:first_name => "Karla Maria", :last_name => " ", :email => "karlamaria@gmail.com", :company => " ", :job_title => "dddd", :phone => "9999", :password => "fgh") }
+    exception = assert_raises(RuntimeError) { id = @salesforceintegration.create_lead_on_salesforce("desafio@desafio.com.br", :first_name => "Karla Maria", :last_name => " ", :email => "karlamaria@gmail.com", :company => " ", :job_title => "dddd", :phone => "9999", :password => "fgh") }
     assert_equal( "The fields last_name and company cannot be blank", exception.message )
   end
 end

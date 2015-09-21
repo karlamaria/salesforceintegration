@@ -16,17 +16,15 @@ module SalesforceIntegration
       client.materialize("User")
     end
 
-    #TODO: Permitir associar a contas
-    def create_lead_on_salesforce(fields)
+    #TODO: Permitir associar a mais de uma conta
+    def create_lead_on_salesforce(username_owner_lead,fields)
       raise "The fields last_name and company are required"    unless fields.has_key?(:last_name) and fields.has_key?(:company)
       raise "The fields last_name and company cannot be blank"     if fields[:last_name].blank?    or fields[:company].blank? 
 
       lead = Lead.new
+      user = User.find_by_username(username_owner_lead)
 
-      #TODO: Nao esta claro ao que corresponde esse usuario no salesforce. Verificar
-      user = User.first
       lead['OwnerId'] = user.Id
-
       lead['FirstName'] = fields[:first_name]
       lead['LastName'] = fields[:last_name]
       lead['Email'] = fields[:email]
